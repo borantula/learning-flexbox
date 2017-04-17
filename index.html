@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example that shows off a blog page with a list of posts.">
+    <title>Blog &ndash; Layout Examples &ndash; Pure</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-"
+          crossorigin="anonymous">
+
+
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-min.css">
+    <!--<![endif]-->
+    <link rel="stylesheet" href="vendor/prism.css">
+
+    <link rel="stylesheet" href="css/layouts/blog.css">
+
+    <link rel="stylesheet" href="css/layouts/flexbox.css">
+</head>
+<body>
+
+
+<div id="layout" class="pure-g">
+    <div class="sidebar pure-u-1 pure-u-md-1-4">
+        <div class="header">
+            <h1 class="brand-title">Flexbox Learning</h1>
+            <h2 class="brand-tagline">I'm learning all about the <strong>flexbox</strong> stuff</h2>
+            <div class="pure-menu pure-menu-horizontal">
+                <ul>
+                    <li class="pure-menu-item"><a href="http://borayalcin.me" target="_blank" class="pure-menu-link">About</a>
+                    </li>
+                    <li class="pure-menu-item"><a href="http://twitter.com/borantula/" target="_blank"
+                                                  class="pure-menu-link">Twitter</a></li>
+                    <li class="pure-menu-item"><a href="http://github.com/borantula/" target="_blank"
+                                                  class="pure-menu-link">GitHub</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="content pure-u-1 pure-u-md-3-4">
+        <div>
+            <!-- A wrapper for all the blog posts -->
+            <div class="posts">
+                <!-- A single blog post -->
+                <section class="post">
+                    <header class="post-header">
+
+                        <h2 class="post-title">I'm Learning Flexbox</h2>
+                    </header>
+
+                    <div class="post-description">
+                        <p>
+                            I finally decided to take my time to learn Flexbox. Following the table layouts, 960 fixed
+                            grids, responsive grids now it is time for flexbox and css grids (not fully supported yet
+                            but coming soon!). So it is perfect time to learn Flexbox!
+                        </p>
+                        <p>I'm preparing this material purely for my own educational purposes, you may find more
+                            comprehensive tutorials out there but I'll be glad if this also helps you.</p>
+                    </div>
+                </section>
+            </div>
+
+            <!-- A wrapper for all the blog posts -->
+            <div class="posts">
+                <!-- A single blog post -->
+                <section class="post">
+                    <header class="post-header">
+
+                        <h2 class="post-title">Terminology & Setup</h2>
+                    </header>
+
+                    <div class="post-description">
+                        <p>
+                            Before diving into the code, let's figure out the terminology first.
+                        </p>
+                        <ul>
+                            <li>
+                                <strong>Container:</strong> Parent item that contains flex items. Also called flex
+                                container and defined with display:flex
+                            </li>
+                            <li>
+                                <strong>Item:</strong> items in a flex container, also called flex items.
+                            </li>
+                        </ul>
+
+                        <h4>Example:</h4>
+                        <p>Here we have four 5x5 boxes within a 100% wide and 15x tall container.</p>
+                        <p>
+                            For this example I'll keep the markup the same and change only some flexbox properties from
+                            css for container and items.
+                            But to start with we only need this much.
+                        </p>
+
+                        <pre data-src="partials/flex-parent-item.html"></pre>
+                        <pre class="language-css">
+                            <code>
+                                .flex-container {
+                                    display: flex;
+                                }
+                                .flex-item {
+                                }
+                            </code>
+                        </pre>
+
+                        <div class="example">
+                            <flex-container></flex-container>
+                        </div>
+
+                        <div class="buttons-container flex-container">
+                            <button class="pure-button pure-button-primary flex-item">Add Margin Auto</button>
+                        </div>
+
+
+                    </div>
+                </section>
+            </div>
+
+
+            <!-- A wrapper for all the blog posts -->
+            <div class="posts">
+                <!-- A single blog post -->
+                <section class="post">
+                    <header class="post-header">
+
+                        <h2 class="post-title">Alignment</h2>
+                    </header>
+
+                    <div class="post-description">
+                        <p>
+                            Aligning items with properties like float, text-align, display inline, inline-block, table
+                            etc. is
+                            always a pain in the c*de and almost always causes some problems.
+                        </p>
+                        <p>Well no more with flexbox!</p>
+
+                        <h4>justify-content:</h4>
+                        <p>
+                            This is a property for flex container. Below you can see examples for single and multiple
+                            items in a container
+                        </p>
+                        <pre class="language-css">
+                            <code>
+                                .flex-container {
+                                    display: flex;
+                                    <mark>justify-content: flex-start | flex-end | center | space-around | space-between;</mark>
+                                }
+                                .flex-item {
+                                }
+                            </code>
+                        </pre>
+
+
+                        <div class="buttons-container flex-container">
+                            <action-button text="flex-start" group="alignment" rule="flexStart"
+                                           :active-rule="groups.alignment.activeRule"></action-button>
+                            <action-button text="flex-end" group="alignment" rule="flexEnd"
+                                           :active-rule="groups.alignment.activeRule"></action-button>
+                            <action-button text="center" group="alignment" rule="center"
+                                           :active-rule="groups.alignment.activeRule"></action-button>
+                            <action-button text="space-between" group="alignment" rule="spaceBetween"
+                                           :active-rule="groups.alignment.activeRule"></action-button>
+                            <action-button text="space-around" group="alignment" rule="spaceAround"
+                                           :active-rule="groups.alignment.activeRule"></action-button>
+                        </div>
+                        <div class="example">
+                            <flex-container :group="groups.alignment"
+                                            :active-rule="groups.alignment.activeRule"
+                                            :child-count="5"></flex-container>
+
+                            <flex-container :group="groups.alignment"
+                                            :active-rule="groups.alignment.activeRule"
+                                            :child-count="1"></flex-container>
+                        </div>
+
+                        <ul>
+                            <li><strong>flex-start:</strong> items are packed at the start of container</li>
+                            <li><strong>flex-end:</strong> items are packed at the end of container</li>
+                            <li><strong>center:</strong> This one is Captain Obvious. Items are packed at the center of
+                                the container. This
+                            </li>
+                            <li><strong>space-between:</strong> items are evenly distributed after placing first and
+                                list element without any space on both ends. If there is only one item it acts like
+                                flex-start. Good for menu items.
+                            </li>
+                            <li><strong>space-around:</strong> items are evenly distributed with equal space on both
+                                sides.
+                            </li>
+
+                        </ul>
+
+
+                    </div>
+                </section>
+            </div>
+
+
+            <div class="footer">
+                <div class="pure-menu pure-menu-horizontal">
+                    <ul>
+                        <li class="pure-menu-item"><a href="http://borayalcin.me" class="pure-menu-link">About</a></li>
+                        <li class="pure-menu-item"><a href="http://twitter.com/borantula/" class="pure-menu-link">Twitter</a>
+                        </li>
+                        <li class="pure-menu-item"><a href="http://github.com/borantula/"
+                                                      class="pure-menu-link">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/x-template" id="flex-container-template">
+    <div :class="currentClasses">
+        <template v-for="itemCount in childCount">
+            <div class="flex-item" :class="childClasses">{{itemCount}}</div>
+        </template>
+    </div>
+</script>
+
+<script src="https://unpkg.com/vue@2.2.6/dist/vue.js"></script>
+<script src="vendor/prism.js"></script>
+<script src="js/main.js"></script>
+
+
+</body>
+</html>
