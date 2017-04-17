@@ -158,9 +158,9 @@
                         </pre>
 
 
-                        <div class="buttons-container flex-container">
+                        <div class="buttons-container flex-container align-items--center">
 
-
+                            <strong>justify-content:</strong>
                             <template v-for="(ruleButton,ruleName) in groups.justifyContent.rules">
                                 <action-button :text="ruleButton.text"
                                                group="justifyContent"
@@ -214,9 +214,10 @@
                         </pre>
 
 
-                        <div class="buttons-container flex-container">
+                        <div class="buttons-container flex-container align-items--center">
 
 
+                            <strong>align-items:</strong>
                             <template v-for="(ruleButton,ruleName) in groups.alignItems.rules">
                                 <action-button :text="ruleButton.text"
                                                group="alignItems"
