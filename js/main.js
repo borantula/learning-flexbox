@@ -41,6 +41,7 @@ var dataObj = {
                 }
             }
         },
+
         alignItems: {
             activeRule: 'flexStart',
             rules: {
