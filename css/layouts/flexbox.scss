@@ -11,7 +11,7 @@
  */
 
 // Alignment - justify-content
-$ruleName : 'justify-content';
+$ruleName: 'justify-content';
 $list: flex-start flex-end center space-around space-between;
 @each $propValue in $list {
     .#{$ruleName}--#{$propValue} {
@@ -20,7 +20,7 @@ $list: flex-start flex-end center space-around space-between;
 }
 
 // Alignment - align-items
-$ruleName : 'align-items';
+$ruleName: 'align-items';
 $list: flex-start flex-end center baseline stretch;
 @each $propValue in $list {
     .#{$ruleName}--#{$propValue} {
@@ -28,12 +28,12 @@ $list: flex-start flex-end center baseline stretch;
     }
 }
 
-
 .example {
 
     .flex-item {
         background: #4d85d1;
-        width: 4rem;
+        min-width: 4rem;
+        min-height: 4rem;
         min-height: 4rem;
         padding: 0.5rem;
         border: 1px solid white;
@@ -49,6 +49,27 @@ $list: flex-start flex-end center baseline stretch;
         height: 10rem;
         transition: 0.5s all;
         margin: 10px 0;
+    }
+
+    .justify-content-example,
+    .align-items-example {
+
+        .flex-item:nth-child(2n) {
+            min-width: 4rem;
+            min-height: 6rem;
+        }
+        .flex-item:nth-child(3n) {
+            min-width: 8rem;
+            min-height: 3rem;
+        }
+        .flex-item:nth-child(4n) {
+            min-width: 4rem;
+            min-height: 8rem;
+        }
+
+        &.align-items--stretch {
+
+        }
     }
 
 }

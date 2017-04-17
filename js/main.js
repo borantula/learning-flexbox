@@ -14,29 +14,29 @@ var dataObj = {
             rules: {
                 flexStart: {
                     text: 'flex-start',
-                    parentClasses: 'justify-content--flex-start',
+                    parentClasses: 'justify-content-example justify-content--flex-start',
                     childClasses: false
                 },
                 flexEnd: {
                     text: 'flex-end',
-                    parentClasses: 'justify-content--flex-end',
+                    parentClasses: 'justify-content-example justify-content--flex-end',
                     childClasses: false
                 },
                 center: {
                     text: 'center',
-                    parentClasses: 'justify-content--center',
+                    parentClasses: 'justify-content-example justify-content--center',
                     childClasses: false
                 },
 
                 spaceBetween: {
                     text: 'space-between',
-                    parentClasses: 'justify-content--space-between',
+                    parentClasses: 'justify-content-example justify-content--space-between',
                     childClasses: false
                 },
 
                 spaceAround: {
                     text: 'space-around',
-                    parentClasses: 'justify-content--space-around',
+                    parentClasses: 'justify-content-example justify-content--space-around',
                     childClasses: false
                 }
             }
@@ -46,29 +46,29 @@ var dataObj = {
             rules: {
                 flexStart: {
                     text:'flex-start',
-                    parentClasses: 'align-items--flex-start',
+                    parentClasses: 'align-items-example align-items--flex-start',
                     childClasses: false
                 },
                 flexEnd: {
                     text:'flex-end',
-                    parentClasses: 'align-items--flex-end',
+                    parentClasses: 'align-items-example align-items--flex-end',
                     childClasses: false
                 },
                 center: {
                     text:'center',
-                    parentClasses: 'align-items--center',
+                    parentClasses: 'align-items-example align-items--center',
                     childClasses: false
                 },
 
                 baseline: {
                     text:'baseline',
-                    parentClasses: 'align-items--baseline',
+                    parentClasses: 'align-items-example align-items--baseline',
                     childClasses: false
                 },
 
                 stretch: {
                     text:'stretch',
-                    parentClasses: 'align-items--stretch',
+                    parentClasses: 'align-items-example align-items--stretch',
                     childClasses: false
                 }
             }

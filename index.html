@@ -58,6 +58,9 @@
                             grids, responsive grids now it is time for flexbox and css grids (not fully supported yet
                             but coming soon!). So it is perfect time to learn Flexbox!
                         </p>
+                        <p>I will first write all properties and explain briefly. Then I'll try to combine those to
+                            create
+                            more realistic examples.</p>
                         <p>I'm preparing this material purely for my own educational purposes, you may find more
                             comprehensive tutorials out there but I'll be glad if this also helps you.</p>
                     </div>
@@ -88,7 +91,8 @@
                         </ul>
 
                         <h4>Example:</h4>
-                        <p>Here we have four 5x5 boxes within a 100% wide and 15x tall container.</p>
+                        <p>Here we have boxes within a 100% wide container. Boxes (flex-item's) doesn't have width and
+                            height but only min-width min-height</p>
                         <p>
                             For this example I'll keep the markup the same and change only some flexbox properties from
                             css for container and items.
@@ -174,17 +178,18 @@
                                             :child-count="1"></flex-container>
                         </div>
 
+
                         <ul>
                             <li><strong>flex-start:</strong> items are packed at the start of container</li>
                             <li><strong>flex-end:</strong> items are packed at the end of container</li>
                             <li><strong>center:</strong> This one is Captain Obvious. Items are packed at the center of
                                 the container. This
                             </li>
-                            <li><strong>baseline:</strong> items are evenly distributed after placing first and
+                            <li><strong>space-between:</strong> items are evenly distributed after placing first and
                                 list element without any space on both ends. If there is only one item it acts like
                                 flex-start. Good for menu items.
                             </li>
-                            <li><strong>stretch:</strong> items are evenly distributed with equal space on both
+                            <li><strong>space-around:</strong> items are evenly distributed with equal space on both
                                 sides.
                             </li>
 
@@ -197,8 +202,7 @@
 
                         <h4 class="rule-title">align-items:</h4>
                         <p>
-                            This is a property for flex container. Below you can see examples for single and multiple
-                            items in a container
+                            This is a property for flex container. It is cross axis version of justify-content.
                         </p>
                         <pre class="language-css">
                             <code>
@@ -236,12 +240,10 @@
                             <li><strong>center:</strong> This one is Captain Obvious. Items are packed at the center of
                                 the container. This
                             </li>
-                            <li><strong>space-between:</strong> items are evenly distributed after placing first and
-                                list element without any space on both ends. If there is only one item it acts like
-                                flex-start. Good for menu items.
+                            <li><strong>baseline:</strong> flex item baselines aligned with cross axis baseline.
                             </li>
-                            <li><strong>space-around:</strong> items are evenly distributed with equal space on both
-                                sides.
+                            <li><strong>stretch:</strong> if the dimensions on item are auto, it stretches the item on
+                                cross axis. It respects the min-width/min-height/max-width/max-height properties.
                             </li>
 
                         </ul>
