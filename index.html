@@ -136,8 +136,10 @@
                             always a pain in the c*de and almost always causes some problems.
                         </p>
                         <p>Well no more with flexbox!</p>
+                    </div>
 
-                        <h4>justify-content:</h4>
+                    <div class="post-description">
+                        <h4 class="rule-title">justify-content:</h4>
                         <p>
                             This is a property for flex container. Below you can see examples for single and multiple
                             items in a container
@@ -148,31 +150,83 @@
                                     display: flex;
                                     <mark>justify-content: flex-start | flex-end | center | space-around | space-between;</mark>
                                 }
-                                .flex-item {
+                            </code>
+                        </pre>
+
+
+                        <div class="buttons-container flex-container">
+
+
+                            <template v-for="(ruleButton,ruleName) in groups.justifyContent.rules">
+                                <action-button :text="ruleButton.text"
+                                               group="justifyContent"
+                                               :rule="ruleName"
+                                               :active-rule="groups.justifyContent.activeRule"></action-button>
+                            </template>
+                        </div>
+                        <div class="example">
+                            <flex-container :group="groups.justifyContent"
+                                            :active-rule="groups.justifyContent.activeRule"
+                                            :child-count="5"></flex-container>
+
+                            <flex-container :group="groups.justifyContent"
+                                            :active-rule="groups.justifyContent.activeRule"
+                                            :child-count="1"></flex-container>
+                        </div>
+
+                        <ul>
+                            <li><strong>flex-start:</strong> items are packed at the start of container</li>
+                            <li><strong>flex-end:</strong> items are packed at the end of container</li>
+                            <li><strong>center:</strong> This one is Captain Obvious. Items are packed at the center of
+                                the container. This
+                            </li>
+                            <li><strong>baseline:</strong> items are evenly distributed after placing first and
+                                list element without any space on both ends. If there is only one item it acts like
+                                flex-start. Good for menu items.
+                            </li>
+                            <li><strong>stretch:</strong> items are evenly distributed with equal space on both
+                                sides.
+                            </li>
+
+                        </ul>
+
+
+                    </div>
+                    <div class="post-description">
+
+
+                        <h4 class="rule-title">align-items:</h4>
+                        <p>
+                            This is a property for flex container. Below you can see examples for single and multiple
+                            items in a container
+                        </p>
+                        <pre class="language-css">
+                            <code>
+                                .flex-container {
+                                    display: flex;
+                                    <mark>align-items: flex-start | flex-end | center | baseline | stretch;</mark>
                                 }
                             </code>
                         </pre>
 
 
                         <div class="buttons-container flex-container">
-                            <action-button text="flex-start" group="alignment" rule="flexStart"
-                                           :active-rule="groups.alignment.activeRule"></action-button>
-                            <action-button text="flex-end" group="alignment" rule="flexEnd"
-                                           :active-rule="groups.alignment.activeRule"></action-button>
-                            <action-button text="center" group="alignment" rule="center"
-                                           :active-rule="groups.alignment.activeRule"></action-button>
-                            <action-button text="space-between" group="alignment" rule="spaceBetween"
-                                           :active-rule="groups.alignment.activeRule"></action-button>
-                            <action-button text="space-around" group="alignment" rule="spaceAround"
-                                           :active-rule="groups.alignment.activeRule"></action-button>
+
+
+                            <template v-for="(ruleButton,ruleName) in groups.alignItems.rules">
+                                <action-button :text="ruleButton.text"
+                                               group="alignItems"
+                                               :rule="ruleName"
+                                               :active-rule="groups.alignItems.activeRule"></action-button>
+                            </template>
                         </div>
                         <div class="example">
-                            <flex-container :group="groups.alignment"
-                                            :active-rule="groups.alignment.activeRule"
+                            <flex-container :group="groups.alignItems"
+                                            :active-rule="groups.alignItems.activeRule"
                                             :child-count="5"></flex-container>
 
-                            <flex-container :group="groups.alignment"
-                                            :active-rule="groups.alignment.activeRule"
+                            <flex-container :group="groups.alignItems"
+                                            :active-rule="groups.alignItems.activeRule"
                                             :child-count="1"></flex-container>
                         </div>
 

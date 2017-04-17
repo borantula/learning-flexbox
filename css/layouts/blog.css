@@ -177,3 +177,10 @@ h3 {
     }
 }
 
+.rule-title {
+    font-size: 20px;
+    font-style: italic;
+    background: #4d85d1;
+    padding: 10px 20px;
+    color:white;
+}

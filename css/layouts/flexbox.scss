@@ -9,31 +9,32 @@
 /**
  * Flex Classes
  */
-.alignment--flex-start {
-    justify-content: flex-start;
+
+// Alignment - justify-content
+$ruleName : 'justify-content';
+$list: flex-start flex-end center space-around space-between;
+@each $propValue in $list {
+    .#{$ruleName}--#{$propValue} {
+        #{$ruleName}: #{$propValue};
+    }
 }
 
-.alignment--flex-end {
-    justify-content: flex-end;
+// Alignment - align-items
+$ruleName : 'align-items';
+$list: flex-start flex-end center baseline stretch;
+@each $propValue in $list {
+    .#{$ruleName}--#{$propValue} {
+        #{$ruleName}: #{$propValue};
+    }
 }
 
-.alignment--center {
-    justify-content: center;
-}
-
-.alignment--space-around {
-    justify-content: space-around;
-}
-.alignment--space-between {
-    justify-content: space-between;
-}
 
 .example {
 
     .flex-item {
         background: #4d85d1;
         width: 4rem;
-        height: 4rem;
+        min-height: 4rem;
         padding: 0.5rem;
         border: 1px solid white;
         color: white;

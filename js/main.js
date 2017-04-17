@@ -9,34 +9,71 @@
 
 var dataObj = {
     groups: {
-        alignment: {
-            component: 'alignmentComponent',
+        justifyContent: {
             activeRule: 'flexStart',
             rules: {
                 flexStart: {
-                    parentClasses: 'alignment--flex-start',
+                    text: 'flex-start',
+                    parentClasses: 'justify-content--flex-start',
                     childClasses: false
                 },
                 flexEnd: {
-                    parentClasses: 'alignment--flex-end',
+                    text: 'flex-end',
+                    parentClasses: 'justify-content--flex-end',
                     childClasses: false
                 },
                 center: {
-                    parentClasses: 'alignment--center',
+                    text: 'center',
+                    parentClasses: 'justify-content--center',
                     childClasses: false
                 },
 
                 spaceBetween: {
-                    parentClasses: 'alignment--space-between',
+                    text: 'space-between',
+                    parentClasses: 'justify-content--space-between',
                     childClasses: false
                 },
 
                 spaceAround: {
-                    parentClasses: 'alignment--space-around',
+                    text: 'space-around',
+                    parentClasses: 'justify-content--space-around',
+                    childClasses: false
+                }
+            }
+        },
+        alignItems: {
+            activeRule: 'flexStart',
+            rules: {
+                flexStart: {
+                    text:'flex-start',
+                    parentClasses: 'align-items--flex-start',
+                    childClasses: false
+                },
+                flexEnd: {
+                    text:'flex-end',
+                    parentClasses: 'align-items--flex-end',
+                    childClasses: false
+                },
+                center: {
+                    text:'center',
+                    parentClasses: 'align-items--center',
+                    childClasses: false
+                },
+
+                baseline: {
+                    text:'baseline',
+                    parentClasses: 'align-items--baseline',
+                    childClasses: false
+                },
+
+                stretch: {
+                    text:'stretch',
+                    parentClasses: 'align-items--stretch',
                     childClasses: false
                 }
             }
         }
+
     }
 };
 
@@ -48,8 +85,8 @@ var actionButton = Vue.component('action-button', {
         rule: String,
         activeRule: String,
     },
-    computed : {
-        isActive : function(){
+    computed: {
+        isActive: function () {
             return (this.rule === this.activeRule);
         }
     },
@@ -147,7 +184,7 @@ var Main = new Vue({
             console.log(group, rule);
             console.log(this.groups[group]);
             this.groups[group].activeRule = rule;
-            this.$forceUpdate();
+            //this.$forceUpdate();
         }
     }
 });
